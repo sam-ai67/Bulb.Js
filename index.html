@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light Bulb Toggle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    body{
+        background-color: black;
+    }
+
+    .bulb-container {
+      text-align: center;
+    }
+
+    .bulb {
+      width: 150px;
+      height: 150px;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .bulb.on {
+      background-color: #ffeb3b; 
+    }
+
+    .switch {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .switch.off {
+      background-color: #f44336;
+    }
+
+    .switch:focus {
+      outline: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="bulb-container">
+    <div id="bulb" class="bulb"></div>
+    <button id="switch" class="switch">Turn On</button>
+  </div>
+
+  <script>
+    const bulb = document.getElementById('bulb');
+    const switchButton = document.getElementById('switch');
+
+    switchButton.addEventListener('click', () => {
+      if (bulb.classList.contains('on')) {
+        bulb.classList.remove('on');
+        switchButton.textContent = 'Turn On';
+        switchButton.classList.remove('off');
+      } else {
+        bulb.classList.add('on');
+        switchButton.textContent = 'Turn Off';
+        switchButton.classList.add('off');
+      }
+    })
+  </script>
+
+</body>
+</html>
